@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "435353014562",
+    "project_id": "latsol-c04a0",
+    "storage_bucket": "latsol-c04a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435353014562:android:e44129bb6281a331f3957b",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435353014562-jl284dhou3orbrdaalm0mml0m5u40qiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6bc-La0qZtzo-VUWKHZt7yBzDne_gihY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435353014562-jl284dhou3orbrdaalm0mml0m5u40qiu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "435353014562-23rrrm8vuj89i2ss5seseuef0302hthg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.edspert.elearning"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435353014562:android:ba333a320c990366f3957b",
+        "android_client_info": {
+          "package_name": "id.edspert.elearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435353014562-nt0t3l9foeqotgglvm2fmstp0ujk7kqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.edspert.elearning",
+            "certificate_hash": "90658015c0c22a313d9e755f9db99ef9f89241af"
+          }
+        },
+        {
+          "client_id": "435353014562-jl284dhou3orbrdaalm0mml0m5u40qiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6bc-La0qZtzo-VUWKHZt7yBzDne_gihY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435353014562-jl284dhou3orbrdaalm0mml0m5u40qiu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "435353014562-23rrrm8vuj89i2ss5seseuef0302hthg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.edspert.elearning"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
