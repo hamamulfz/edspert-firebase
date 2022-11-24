@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../controllers/firestore_controller.dart';
 import '../models/chat_item.dart';
-import '../widgets/chat_item.dart';
+import '../widgets/chat_item_widget.dart';
 import '../widgets/input_chat.dart';
 
 /// C is a generic class can referred to other class based on assignment
@@ -64,7 +65,10 @@ class FirestoreStream extends StatelessWidget {
   Widget buildData(BuildContext context) {
     return GetBuilder<FirestoreController>(builder: (c) {
       return StreamBuilder(
-          stream: controller.getCollection().orderBy('message', descending: true).snapshots(),
+          stream: controller
+              .getCollection()
+              .orderBy('message', descending: true)
+              .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return Center(
@@ -82,9 +86,11 @@ class FirestoreStream extends StatelessWidget {
               itemCount: snapshot.data!.docs.reversed.length,
               reverse: true,
               itemBuilder: (context, index) {
-                final chat = snapshot.data!.docs[index];
+                final chat =
+                    snapshot.data!.docs[index].data() as Map<String, dynamic>;
                 final chatItem = ChatItem(
                   content: chat['message'],
+                  image: chat['image'],
                   id: 1,
                   name: "Name",
                   dateTime: DateTime.now(),
@@ -114,7 +120,7 @@ class FirestoreStream extends StatelessWidget {
   }
 
   void onTapCamera(BuildContext context) {
-    controller.openCamera();
+    controller.pickImage(ImageSource.camera);
   }
 
   void onSend(BuildContext context) {

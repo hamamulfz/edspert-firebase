@@ -1,4 +1,3 @@
-
 import 'package:firebase/helpers/date_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +18,9 @@ class ChatItemWidget extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment:
-            (chat.isSender!) ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        crossAxisAlignment: (chat.isSender!)
+            ? CrossAxisAlignment.end
+            : CrossAxisAlignment.start,
         children: [
           Text(
             chat.name,
@@ -42,10 +42,25 @@ class ChatItemWidget extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(chat.content,
-                  style: TextStyle(
-                    color: (chat.isSender!) ? Colors.white : Colors.black,
-                  )),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (chat.image != null)
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(3),
+                      child: Image.network(
+                        chat.image!,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  Text(chat.content,
+                      style: TextStyle(
+                        color: (chat.isSender!) ? Colors.white : Colors.black,
+                      )),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 4),

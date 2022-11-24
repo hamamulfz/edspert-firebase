@@ -127,15 +127,21 @@ class FirestoreController extends GetxController {
     );
     if (img != null) {
       final userId = Random().nextInt(100);
-      final refImg = FirebaseStorage.instance.ref("user/$userId/$userId.jpg");
+      final refImg =
+          FirebaseStorage.instance.ref("$collectionName/$userId.jpg");
       final file = File(img.path);
       final uploaded = await refImg.putFile(file);
       final url = await uploaded.ref.getDownloadURL();
       print(url);
 
-      final data =
-          FirebaseFirestore.instance.collection('users').doc("$userId");
-      data.set({"image_url": url}, SetOptions(merge: true));
+      final data = FirebaseFirestore.instance.collection(collectionName);
+      data.add(
+        {
+          "image": url,
+          "message": msgController.text,
+        },
+      );
+      msgController.text = "";
       update();
     }
   }

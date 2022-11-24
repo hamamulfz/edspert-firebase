@@ -2,9 +2,13 @@ import 'package:firebase/app/modules/firestore/views/firestore_fetch.dart';
 import 'package:firebase/app/modules/firestore/views/firestore_stream.dart';
 import 'package:firebase/app/modules/firestore/views/firestore_view.dart';
 import 'package:firebase/app/modules/push_notif/views/push_notif_view.dart';
-import 'package:firebase/app/modules/storage/views/storage_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_package/new_package.dart';
+
+import 'app/modules/app_module/custom_method_blank_ui.dart';
+import 'app/modules/app_module/ourside_widget.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -83,6 +87,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             ListTile(
+              title: Text("Blank UI"),
+              subtitle: Text("Mengirim gambar/file ke third party service"),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Get.to(
+                  BlankUI(),
+                  // CustomMethodBlankUI()
+                  // OutsideWidgetCall(),
+                  // binding: Bul
+                );
+              },
+            ),
+            ListTile(
               title: Text("Messaging / Notification"),
               subtitle: Text("Setup Notifikasi third party service"),
               trailing: Icon(Icons.arrow_forward_ios),
@@ -121,11 +138,11 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
                 Get.to(
-                  StorageView(),
+                  FirestoreStream(),
                   // binding: Bul
                 );
               },
-            )
+            ),
           ],
         ),
       ),

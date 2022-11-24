@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/firestore_controller.dart';
-import '../widgets/chat_item.dart';
+import '../widgets/chat_item_widget.dart';
 import '../widgets/input_chat.dart';
 
 /// C is a generic class can referred to other class based on assignment
